@@ -64,7 +64,7 @@
         "express-session": "^1.15.6",
         "helmet": "^3.12.0",
         "method-override": "^2.3.10",
-        "mongoose": "5.0.14",
+        "mongoose": "^5.7.1",
         "mongoose-paginate": "^5.0.3",
         "node-pre-gyp": "^0.12.0",
         "passport": "^0.4.0",
@@ -95,10 +95,10 @@
         "babel-register": "^6.26.0",
         "concurrently": "^3.5.1",
         "eslint": "^4.19.1",
-        "gulp": "^3.9.1",
+        "gulp": "^4.0.2",
         "gulp-babel": "^7.0.1",
         "gulp-json-editor": "^2.3.0",
-        "gulp-minifier": "^1.2.2",
+        "gulp-minifier": "^2.0.0",
         "gulp-rename": "^1.2.2",
         "gulp-rimraf": "^0.2.2",
         "mocha": "^5.0.5",
@@ -109,7 +109,7 @@
         "run-sequence": "^2.2.1"
     },
     "engines": {
-        "node": "^8.16.0",
+        "node": "12.5.0",
         "npm": "^6.0.0"
     }
 }
