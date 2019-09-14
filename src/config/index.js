@@ -1,7 +1,7 @@
 import path from 'path';
 
-const APP_NAME = `your-app-name`;
-const DB_NAME = `your-app-name-dev`;
+const APP_NAME = `yashgatha_node`;
+const DB_NAME = `yashgatha_node`;
 const CLIENT = '/client';
 
 export default {
@@ -47,6 +47,8 @@ export default {
     // uri: mongodb://username:password@host:port/database?options
     uri: `mongodb://localhost:27017/${DB_NAME}`,
     options: {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     },
     seed: {
       path: '/api/models/seeds/',

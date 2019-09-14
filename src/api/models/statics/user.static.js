@@ -74,7 +74,7 @@ export default (User) => {
 
       return new Promise((resolve, reject) => {
 
-        this.findOne({ username }).count().exec().then(found => {
+        this.findOne({ username }).countDocuments().exec().then(found => {
           resolve(found);
         });
 
