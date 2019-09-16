@@ -95,7 +95,7 @@
         "babel-register": "^6.26.0",
         "concurrently": "^3.5.1",
         "eslint": "^4.19.1",
-        "gulp": "^4.0.2",
+        "gulp": "^4.0.0",
         "gulp-babel": "^7.0.1",
         "gulp-json-editor": "^2.3.0",
         "gulp-minifier": "^2.0.0",

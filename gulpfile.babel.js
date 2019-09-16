@@ -15,24 +15,19 @@ const dist_client = `${dist}/client`;
 const pm2_simple = `pm2.simple.config.js`;
 const pm2_cluster = `pm2.cluster.config.js`;
 
-gulp.task('build', () => {
-  // Sequence
-  runSequence('build-clean', 'build-babel', 'build-replace');
-});
-
-gulp.task('build-clean', () => {
+gulp.task('build-clean', async () => {
   // Remove files dist, but ignore assets
   return gulp.src([
     `${dist_server}/*`, `!${dist_server}/assets`, `${dist_client}`
   ], { read: false }).pipe(clean({ force: true }));
 });
 
-gulp.task('build-babel', () => {
+gulp.task('build-babel', async () => {
   // Babel transform
   return gulp.src(['src/**/*.js', '!src/config/*.js']).pipe(babel()).pipe(gulp.dest(dist_server));
 });
 
-gulp.task('build-replace', () => {
+gulp.task('build-replace', async () => {
   // Copy file config dev or production 
   const conf = process.argv[3] ? 'index' : 'production';
   // Copy config production
@@ -71,3 +66,9 @@ gulp.task('build-replace', () => {
   // Success
   setTimeout(() => console.log(chalk.greenBright('\n---------\nBuild success!\n---------\n')), 500);
 });
+
+gulp.task('build', gulp.series(
+  'build-clean',
+  'build-babel',
+  'build-replace')
+);
