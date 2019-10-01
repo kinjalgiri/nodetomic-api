@@ -1,13 +1,13 @@
-import helmet from 'helmet';
-import bodyParser from 'body-parser';
-import compression from 'compression';
-import methodOverride from 'method-override';
-import cookieParser from 'cookie-parser';
-import passport from 'passport';
-import session from 'express-session';
-import cors from 'cors';
-import morgan from 'morgan';
-import config from '../../config';
+const helmet = require('helmet');
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
+const passport = require('passport');
+const session = require('express-session');
+const cors = require('cors');
+const morgan = require('morgan');
+const config = require('../../config');
 
 export function index(app) {
 

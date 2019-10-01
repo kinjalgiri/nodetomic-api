@@ -1,6 +1,5 @@
-
-import * as controller from './../controllers/session.controller';
-import { mw } from './../services/mw.service';
+const controller = require('./../controllers/session.controller');
+const { mw } = require('./../services/mw.service');
 
 export default (app) => {
     app.get('/auth/session', mw(), controller.list);

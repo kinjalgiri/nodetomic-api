@@ -1,4 +1,4 @@
-import * as controller from './../controllers/facebook.controller';
+const controller = require('./../controllers/facebook.controller');
 
 export default (app) => {
     app.get('/auth/facebook', controller.index);

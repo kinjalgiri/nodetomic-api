@@ -1,6 +1,6 @@
-import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
-import User from '../../api/models/user.model';
+const passport = require('passport');
+const { Strategy as LocalStrategy } = require('passport-local');
+const User = require('../../api/models/user.model');
 
 passport.use('local', new LocalStrategy({
   usernameField: 'username',

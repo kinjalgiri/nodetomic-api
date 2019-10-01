@@ -1,5 +1,5 @@
-import fs from "fs";
-import config from '../../config';
+const fs = require("fs");
+const config = require('../../config');
 
 // Passport's
 if ("local" in config.oAuth && config.oAuth.local.enabled)

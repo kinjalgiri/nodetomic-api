@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
-import chalk from 'chalk';
-import fs from 'fs';
-import config from '../../config';
+const mongoose = require('mongoose');
+const chalk = require('chalk');
+const fs = require('fs');
+const config = require('../../config');
 
 const uri = config.mongoose.uri;
 const opts = config.mongoose.options;

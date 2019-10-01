@@ -1,7 +1,7 @@
-import passport from 'passport';
-import { Strategy as BitbucketStrategy } from 'passport-bitbucket';
-import User from '../../api/models/user.model';
-import config from '../../config';
+const passport = require('passport');
+const { Strategy as BitbucketStrategy } = require('passport-bitbucket');
+const User = require('../../api/models/user.model');
+const config = require('../../config');
 
 passport.use(new BitbucketStrategy({
   consumerKey: config.oAuth.bitbucket.clientID,

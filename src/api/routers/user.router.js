@@ -1,5 +1,5 @@
-import * as controller from './../controllers/user.controller';
-import { mw } from './../../auth/services/mw.service';
+const controller = require('./../controllers/user.controller');
+const { mw } = require('./../../auth/services/mw.service');
 
 export default (app) => {
     app.post('/api/user', controller.create);

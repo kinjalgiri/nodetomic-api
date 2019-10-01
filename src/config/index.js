@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 const APP_NAME = `yashgatha_node`;
 const DB_NAME = `yashgatha_node`;

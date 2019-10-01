@@ -1,4 +1,4 @@
-import path from 'path';
+const path = require('path');
 
 const APP_NAME = `your-app-name`;
 const DB_NAME = `your-app-name`;
