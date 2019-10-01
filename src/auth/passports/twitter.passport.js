@@ -1,5 +1,5 @@
 const passport = require('passport');
-const { TwitterStrategy } = require('passport-twitter').Strategy;
+const { Strategy as TwitterStrategy } = require('passport-twitter');
 const User = require('../../api/models/user.model');
 const config = require('../../config');
 
