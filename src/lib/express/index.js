@@ -21,9 +21,10 @@ export function index(app) {
     app.use(helmet());
     app.use(cors({ origin: true, credentials: true }));
 
+	/*
     if ("twitter" in config.oAuth && config.oAuth.twitter.enabled)
       app.use(session({ secret: config.secret, resave: false, saveUninitialized: false }));
-
+	*/
     app.use(passport.initialize());
     app.use(passport.session());
 
