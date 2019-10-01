@@ -1,5 +1,5 @@
-const { result, notFound, error } = require('express-easy-helper');
-const User = require('../models/user.model');
+import { result, notFound, error } from 'express-easy-helper';
+import User from '../models/user.model';
 
 // Create a user
 export function create(req, res) {

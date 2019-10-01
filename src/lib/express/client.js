@@ -1,8 +1,8 @@
-const path = require('path');
-const fs = require("fs");
-const express = require('express');
-const favicon = require('serve-favicon');
-const config = require('../../config');
+import path from 'path';
+import fs from "fs";
+import express from 'express';
+import favicon from 'serve-favicon';
+import config from '../../config';
 
 export default (app) => {
 

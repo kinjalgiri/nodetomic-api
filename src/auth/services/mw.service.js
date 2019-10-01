@@ -1,7 +1,7 @@
-const { unauthorized, forbidden } = require('express-easy-helper');
-const { has } = require('role-calc');
-const { r } = require('../../lib/redis-jwt');
-const User = require('../../api/models/user.model');
+import { unauthorized, forbidden } from 'express-easy-helper';
+import { has } from 'role-calc';
+import { r } from '../../lib/redis-jwt';
+import User from '../../api/models/user.model';
 
 // VerifyToken
 export function mw(requiredRoles) {

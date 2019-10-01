@@ -1,4 +1,4 @@
-const controller = require('./../controllers/twitter.controller');
+import * as controller from './../controllers/twitter.controller';
 
 export default (app) => {
     app.get('/auth/twitter', controller.index);

@@ -1,7 +1,7 @@
-const passport = require('passport');
-const { Strategy as TwitterStrategy } = require('passport-twitter');
-const User = require('../../api/models/user.model');
-const config = require('../../config');
+import passport from 'passport';
+import { Strategy as TwitterStrategy } from 'passport-twitter';
+import User from '../../api/models/user.model';
+import config from '../../config';
 
 passport.use(new TwitterStrategy({
   consumerKey: config.oAuth.twitter.clientID,

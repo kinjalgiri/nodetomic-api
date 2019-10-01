@@ -1,7 +1,7 @@
-const passport = require('passport');
-const { Strategy as GitHubStrategy } = require('passport-github');
-const User = require('../../api/models/user.model');
-const config = require('../../config');
+import passport from 'passport';
+import { Strategy as GitHubStrategy } from 'passport-github';
+import User from '../../api/models/user.model';
+import config from '../../config';
 
 passport.use(new GitHubStrategy({
   clientID: config.oAuth.github.clientID,

@@ -1,6 +1,6 @@
-const express = require('express');
-const chalk = require('chalk');
-const config = require('./config');
+import express from 'express';
+import chalk from 'chalk';
+import config from './config';
 const app = express();
 
 (async function run() {

@@ -1,7 +1,7 @@
-const passport = require('passport');
-const { Strategy as FacebookStrategy } = require('passport-facebook');
-const User = require('../../api/models/user.model');
-const config = require('../../config');
+import passport from 'passport';
+import { Strategy as FacebookStrategy } from 'passport-facebook';
+import User from '../../api/models/user.model';
+import config from '../../config';
 
 passport.use(new FacebookStrategy({
   clientID: config.oAuth.facebook.clientID,

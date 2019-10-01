@@ -1,7 +1,7 @@
-const passport = require('passport');
-const { OAuth2Strategy as GoogleStrategy } = require('passport-google-oauth');
-const User = require('../../api/models/user.model');
-const config = require('../../config');
+import passport from 'passport';
+import { OAuth2Strategy as GoogleStrategy } from 'passport-google-oauth';
+import User from '../../api/models/user.model';
+import config from '../../config';
 
 passport.use(new GoogleStrategy({
   clientID: config.oAuth.google.clientID,

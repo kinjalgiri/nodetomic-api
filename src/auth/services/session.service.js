@@ -1,7 +1,7 @@
-const { result, invalid, error } = require('express-easy-helper');
-const { calc, time } = require('role-calc');
-const { r } = require('../../lib/redis-jwt');
-const config = require('../../config');
+import { result, invalid, error } from 'express-easy-helper';
+import { calc, time } from 'role-calc';
+import { r } from '../../lib/redis-jwt';
+import config from '../../config';
 
 // Initialize after login success
 export async function initialize(err, user, res) {

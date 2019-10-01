@@ -1,4 +1,4 @@
-const controller = require('./../controllers/bitbucket.controller');
+import * as controller from './../controllers/bitbucket.controller';
 
 export default (app) => {
     app.get('/auth/bitbucket', controller.index);

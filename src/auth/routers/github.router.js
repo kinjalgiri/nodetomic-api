@@ -1,4 +1,4 @@
-const controller = require('./../controllers/github.controller');
+import * as controller from './../controllers/github.controller';
 
 export default (app) => {
     app.get('/auth/github', controller.index);

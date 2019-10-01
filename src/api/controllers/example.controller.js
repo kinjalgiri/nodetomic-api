@@ -1,6 +1,6 @@
-const { result, notFound, error } = require('express-easy-helper');
-const { emit } = require('../sockets/example.socket');
-const Example =  require('../models/example.model');
+import { result, notFound, error } from 'express-easy-helper';
+import { emit } from '../sockets/example.socket';
+import Example from '../models/example.model';
 
 // List Example's
 export function list(req, res) {

@@ -1,5 +1,5 @@
-const { result, error } = require('express-easy-helper');
-const { call } = require('../../lib/redis-jwt');
+import { result, error } from 'express-easy-helper';
+import { call } from '../../lib/redis-jwt';
 
 /* Administrator */
 

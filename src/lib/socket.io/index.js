@@ -1,7 +1,7 @@
-const Redis = require('socket.io-redis');
-const chalk = require('chalk');
-const fs = require("fs");
-const config = require('../../config');
+import Redis from 'socket.io-redis';
+import chalk from 'chalk';
+import fs from "fs";
+import config from '../../config';
 
 const io = require('socket.io')(config['socket.io'].port);
 io.adapter(Redis(config['socket.io'].redis));

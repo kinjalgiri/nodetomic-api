@@ -1,5 +1,5 @@
-const passport = require('passport');
-const { initialize } = require('../services/session.service');
+import passport from 'passport';
+import { initialize } from '../services/session.service';
 
 // Callback passport
 export function callback(req, res, next) {

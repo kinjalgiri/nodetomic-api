@@ -1,4 +1,4 @@
-const controller = require('./../controllers/example.controller');
+import * as controller from './../controllers/example.controller';
 
 export default (app) => {
     app.get('/api/example/greeting', controller.list);

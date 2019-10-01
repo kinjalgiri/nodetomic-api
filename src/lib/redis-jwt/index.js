@@ -1,6 +1,6 @@
-const RedisJWT = require('redis-jwt');
-const chalk = require('chalk');
-const config = require('../../config');
+import RedisJWT from 'redis-jwt';
+import chalk from 'chalk';
+import config from '../../config';
 
 export const r = new RedisJWT(config['redis-jwt']);
 
