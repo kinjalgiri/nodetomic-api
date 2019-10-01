@@ -1,5 +1,5 @@
 const passport = require('passport');
-const { Strategy } = require('passport-bitbucket').BitbucketStrategy;
+const { BitbucketStrategy } = require('passport-bitbucket').Strategy;
 const User = require('../../api/models/user.model');
 const config = require('../../config');
 

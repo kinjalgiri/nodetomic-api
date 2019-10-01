@@ -1,5 +1,5 @@
 const passport = require('passport');
-const { Strategy as FacebookStrategy } = require('passport-facebook');
+const { FacebookStrategy } = require('passport-facebook').Strategy;
 const User = require('../../api/models/user.model');
 const config = require('../../config');
 
