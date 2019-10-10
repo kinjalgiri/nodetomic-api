@@ -20,24 +20,46 @@ gulp.task('build-clean', async () => {
   return gulp.src([
     `${dist_server}/*`, `!${dist_server}/assets`, `${dist_client}`
   ], { read: false }).pipe(clean({ force: true }));
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nClean success!\n---------\n')), 500);
 });
 
 gulp.task('build-babel', async () => {
   // Babel transform
   return gulp.src(['src/**/*.js', '!src/config/*.js']).pipe(babel()).pipe(gulp.dest(dist_server));
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nBabel success!\n---------\n')), 500);
 });
 
-gulp.task('build-replace', async () => {
+gulp.task('build-replace-copy-config', async () => {
   // Copy file config dev or production 
   const conf = process.argv[3] ? 'index' : 'production';
   // Copy config production
   gulp.src([`src/config/${conf}.js`]).pipe(babel()).pipe(rename('index.js')).pipe(gulp.dest(`${dist_server}/config`));
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nCopy config production success!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-copy-views', async () => {
   // Copy views
   gulp.src(['src/views/**/*.*', '!src/views/**/*.js']).pipe(minify({ minify: true, collapseWhitespace: true, conservativeCollapse: true, minifyCSS: true })).pipe(gulp.dest(`${dist_server}/views`));
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nBuild Copy views!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-copy-assets', async () => {
   // Copy assets
   gulp.src(['src/assets/**/*']).pipe(gulp.dest(`${dist_server}/assets`));
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nCopy assets success!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-copy-yaml', async () => {
   // Copy *.yaml
   gulp.src(['src/**/*.yaml']).pipe(gulp.dest(dist_server));
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nCopy *.yaml success!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-package-json', async () => {
   // package.json
   gulp.src("package.json").pipe(jeditor((json) => {
     delete json.devDependencies;
@@ -49,8 +71,18 @@ gulp.task('build-replace', async () => {
     };
     return json;
   })).pipe(gulp.dest(dist));
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\npackage.json success!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-copy-pm2-files', async () => {
   // Copy pm2 files
   gulp.src([pm2_simple, pm2_cluster]).pipe(gulp.dest(dist));
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nCopy pm2 files success!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-copy-client-folder', async () => {
   // If exits client folder, then copy current client
   if (fs.existsSync(`${dist}/client`)) {
     gulp.src(['client/**/*']).pipe(gulp.dest(dist_client));
@@ -59,16 +91,28 @@ gulp.task('build-replace', async () => {
     gulp.src(['src/views/default/favicon.ico', 'src/views/default/logo.svg']).pipe(gulp.dest(dist_client));
     gulp.src(['src/views/default/client.html']).pipe(minify({ minify: true, collapseWhitespace: true, conservativeCollapse: true })).pipe(rename('index.html')).pipe(gulp.dest(dist_client));
   }
+  // Success
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nClient folder success!\n---------\n')), 250);
+});
+
+gulp.task('build-replace-copy-assets-if-not-exists', async () => {
   // Copy assets if not exists
   if (!fs.existsSync(`${dist_server}/assets`)) {
     gulp.src('src/assets').pipe(gulp.dest(`${dist_server}`));
   }
   // Success
-  setTimeout(() => console.log(chalk.greenBright('\n---------\nBuild success!\n---------\n')), 500);
+  setTimeout(() => console.log(chalk.greenBright('\n---------\nCopy assets if not exists success!\n---------\n')), 500);
 });
 
 gulp.task('build', gulp.series(
   'build-clean',
   'build-babel',
-  'build-replace')
+  'build-replace-copy-config',
+  'build-replace-copy-views',
+  'build-replace-copy-assets',
+  'build-replace-copy-yaml',
+  'build-replace-package-json',
+  'build-replace-copy-pm2-files',
+  'build-replace-copy-client-folder',
+  'build-replace-copy-assets-if-not-exists')
 );
