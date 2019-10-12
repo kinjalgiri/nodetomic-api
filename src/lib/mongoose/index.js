@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import chalk from 'chalk';
 import fs from 'fs';
 import config from '../../config';
-
+console.log('config.mongoose.uri',  config.mongoose.uri)
 const uri = config.mongoose.uri;
 const opts = config.mongoose.options;
 
